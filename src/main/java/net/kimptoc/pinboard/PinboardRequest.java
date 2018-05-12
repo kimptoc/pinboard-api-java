@@ -18,7 +18,7 @@ public class PinboardRequest {
 
     public Document getPostsXml(String user, String token, String tag) {
         String queryParams = null;
-        if (tag != null) queryParams = "tag=" + tag;
+        if (tag != null && tag.length() > 0) queryParams = "tag=" + tag;
         return getXml(user, token, "v1/posts/all", queryParams);
     }
 
