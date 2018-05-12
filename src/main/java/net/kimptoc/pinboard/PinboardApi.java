@@ -15,7 +15,7 @@ import java.util.function.Function;
 public class PinboardApi {
     PinboardRequest pinboard;
 
-    PinboardApi() {
+    public PinboardApi() {
         pinboard = new PinboardRequest();
     }
 
