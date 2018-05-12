@@ -11,3 +11,7 @@ Got an idea, issue, etc - raise an issue - https://github.com/kimptoc/pinboard-a
 
 For example usage see test class PinboardApiTest.
 
+TODO
+- tests
+- travis
+- maven upload
