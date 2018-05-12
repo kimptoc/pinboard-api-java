@@ -12,6 +12,13 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class PinboardRequest {
+
+    private final String pinboardRootUrl;
+
+    public PinboardRequest() {
+        pinboardRootUrl = System.getProperty("pinboard.root.url", "https://api.pinboard.in/");
+    }
+
     public Document getTagsXml(String user, String token) {
         return getXml(user, token, "v1/tags/get", null);
     }
@@ -46,7 +53,7 @@ public class PinboardRequest {
     }
 
     public InputStream queryPinboardForInputStream(String user, String token, String apiMethod, String queryParams) throws IOException {
-        String url = "https://api.pinboard.in/" + apiMethod + "?auth_token=" + user + ":" + token;
+        String url = pinboardRootUrl + apiMethod + "?auth_token=" + user + ":" + token;
         if (queryParams != null) url += "&" + queryParams;
         URL myURL = new URL(url);
         URLConnection myURLConnection = myURL.openConnection();
