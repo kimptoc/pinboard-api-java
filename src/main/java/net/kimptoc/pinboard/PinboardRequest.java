@@ -19,6 +19,10 @@ public class PinboardRequest {
         pinboardRootUrl = System.getProperty("pinboard.root.url", "https://api.pinboard.in/");
     }
 
+    public PinboardRequest(String url) {
+        pinboardRootUrl = url;
+    }
+
     public Document getTagsXml(String user, String token) {
         return getXml(user, token, "v1/tags/get", null);
     }

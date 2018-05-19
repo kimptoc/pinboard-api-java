@@ -19,6 +19,10 @@ public class PinboardApi {
         pinboard = new PinboardRequest();
     }
 
+    public PinboardApi(String pinboardUrl) {
+        pinboard = new PinboardRequest(pinboardUrl);
+    }
+
     public List<Tag> getTags(String user, String token) {
 
         return getStuff(pinboard.getTagsXml(user, token), "tag", XmlConverter::createTagFromXml);
